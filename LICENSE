@@ -13,7 +13,7 @@
         }
 
         body {
-            background-color: #0f172a;
+            background-color: #0d0d0d;
             color: #f8fafc;
             line-height: 1.6;
         }
@@ -23,14 +23,14 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 8%;
-            background-color: #1e293b;
-            border-bottom: 1px solid #334155;
+            background-color: #0d0d0d;
+            border-bottom: 1px solid #222222;
         }
 
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
-            color: #38bdf8;
+            color: #f3c649;
             letter-spacing: 1px;
         }
 
@@ -48,40 +48,41 @@
         .hero h1 {
             font-size: 2.8rem;
             margin-bottom: 20px;
-            color: #ffffff;
+            color: #f3c649;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            color: #94a3b8;
-            margin-bottom: 30px;
+            font-size: 1.1rem;
+            color: #a1a1aa;
+            margin-bottom: 35px;
         }
 
         .cta-btn {
-            background-color: #0284c7;
-            color: white;
+            background-color: #f3c649;
+            color: #000000;
             padding: 14px 32px;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 6px;
             font-weight: 600;
             font-size: 1rem;
+            display: inline-block;
             transition: background 0.3s ease;
         }
 
         .cta-btn:hover {
-            background-color: #0369a1;
+            background-color: #e5b838;
         }
 
         .services {
             padding: 60px 8%;
-            background-color: #1e293b;
+            background-color: #141414;
         }
 
         .services h2 {
             text-align: center;
             margin-bottom: 40px;
             font-size: 2rem;
-            color: #38bdf8;
+            color: #f3c649;
         }
 
         .grid {
@@ -91,28 +92,28 @@
         }
 
         .card {
-            background-color: #0f172a;
+            background-color: #0d0d0d;
             padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #334155;
+            border-radius: 8px;
+            border: 1px solid #222222;
         }
 
         .card h3 {
             margin-bottom: 15px;
-            color: #f1f5f9;
+            color: #ffffff;
         }
 
         .card p {
-            color: #94a3b8;
+            color: #a1a1aa;
             font-size: 0.95rem;
         }
 
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #0f172a;
-            border-top: 1px solid #334155;
-            color: #64748b;
+            background-color: #0d0d0d;
+            border-top: 1px solid #222222;
+            color: #666666;
             font-size: 0.9rem;
         }
     </style>
@@ -121,12 +122,13 @@
 
     <header>
         <div class="logo">ZIGAM</div>
+        <a href="https://wa.me/2348128882746?text=Hello,%20I%20would%20like%20to%20get%20started%20with%20ZIGAM." class="cta-btn" target="_blank" style="padding: 10px 20px;">Get Started</a>
     </header>
 
     <section class="hero">
-        <h1>Let Us Do It For You</h1>
-        <p>Your trusted recruitment and staffing partner in Lagos. Connecting businesses with qualified talent seamlessly.</p>
-        <a href="mailto:romeorommaannss0159@gmail.com" class="cta-btn">Get Started</a>
+        <h1>Seamless Employer of Record & Talent Solutions in Nigeria</h1>
+        <p>ZIGAM bridges the gap between top talent and companies worldwide. We handle payroll, legal compliance, tax remittances, and recruitment so you can focus on scaling your business.</p>
+        <a href="https://wa.me/2348128882746?text=Hello,%20I%20would%20like%20to%20schedule%20a%20consultation%20with%20ZIGAM." class="cta-btn" target="_blank">Schedule a Consultation</a>
     </section>
 
     <section class="services">
@@ -141,8 +143,8 @@
                 <p>Flexible short-term and permanent recruitment for various industries.</p>
             </div>
             <div class="card">
-                <h3>Intermediary Management</h3>
-                <p>Streamlined communication and hiring management between employers and candidates.</p>
+                <h3>Employer of Record</h3>
+                <p>Streamlined payroll, tax remittances, and legal compliance management for candidates.</p>
             </div>
         </div>
     </section>
