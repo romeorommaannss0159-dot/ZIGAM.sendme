@@ -83,17 +83,24 @@
         .hero-image-container {
             width: 100%;
             max-width: 850px;
+            height: 320px;
             margin-top: 45px;
             border-radius: 12px;
             overflow: hidden;
-            border: 1px solid #222222;
+            border: 2px dashed #f3c649;
+            background-color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f3c649;
+            font-weight: 600;
         }
 
         .hero-image-container img {
             width: 100%;
-            height: auto;
-            display: block;
+            height: 100%;
             object-fit: cover;
+            display: block;
         }
 
         .services {
@@ -132,18 +139,19 @@
             width: 100%;
             height: 180px;
             background-color: #1c1c1c;
+            border-bottom: 2px dashed #f3c649;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f3c649;
+            font-size: 0.9rem;
         }
 
         .card-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover .card-img img {
-            transform: scale(1.05);
         }
 
         .card-content {
@@ -186,8 +194,12 @@
                 padding: 50px 15px 30px;
             }
             
+            .hero-image-container {
+                height: 200px;
+            }
+
             .card-img {
-                height: 160px;
+                height: 150px;
             }
         }
     </style>
@@ -204,9 +216,11 @@
         <p>ZIGAM bridges the gap between top talent and companies worldwide. We handle payroll, legal compliance, tax remittances, and recruitment so you can focus on scaling your business.</p>
         <a href="https://wa.me/2348128882746?text=Hello,%20I%20would%20like%20to%20schedule%20a%20consultation%20with%20ZIGAM." class="cta-btn" target="_blank">Schedule a Consultation</a>
 
-        <!-- HERO IMAGE SLOT -->
+        <!-- HERO IMAGE BOX -->
         <div class="hero-image-container">
-            <img src="https://via.placeholder.com/1200x600/1e1e1e/f3c649?text=Hero+Banner+Image+(e.g.,+Professional+Team+or+Office)" alt="ZIGAM Professional Staffing Solutions">
+            <!-- Replace src value with your image filename when ready -->
+            <img src="hero-image.jpg" alt="Hero Banner" onerror="this.style.display='none'">
+            <span>[ Main Hero Image Box ]</span>
         </div>
     </section>
 
@@ -215,9 +229,10 @@
         <div class="grid">
             
             <div class="card">
-                <!-- CARD IMAGE SLOT 1 -->
+                <!-- CARD IMAGE BOX 1 -->
                 <div class="card-img">
-                    <img src="https://via.placeholder.com/600x400/1e1e1e/f3c649?text=Talent+Sourcing" alt="Talent Sourcing">
+                    <img src="talent-sourcing.jpg" alt="Talent Sourcing" onerror="this.style.display='none'">
+                    <span>[ Talent Sourcing Photo ]</span>
                 </div>
                 <div class="card-content">
                     <h3>Talent Sourcing</h3>
@@ -226,9 +241,10 @@
             </div>
 
             <div class="card">
-                <!-- CARD IMAGE SLOT 2 -->
+                <!-- CARD IMAGE BOX 2 -->
                 <div class="card-img">
-                    <img src="https://via.placeholder.com/600x400/1e1e1e/f3c649?text=Staffing+Solutions" alt="Staffing Solutions">
+                    <img src="staffing.jpg" alt="Staffing Solutions" onerror="this.style.display='none'">
+                    <span>[ Staffing Photo ]</span>
                 </div>
                 <div class="card-content">
                     <h3>Staffing Solutions</h3>
@@ -237,9 +253,10 @@
             </div>
 
             <div class="card">
-                <!-- CARD IMAGE SLOT 3 -->
+                <!-- CARD IMAGE BOX 3 -->
                 <div class="card-img">
-                    <img src="https://via.placeholder.com/600x400/1e1e1e/f3c649?text=Employer+of+Record" alt="Employer of Record">
+                    <img src="eor.jpg" alt="Employer of Record" onerror="this.style.display='none'">
+                    <span>[ EOR Photo ]</span>
                 </div>
                 <div class="card-content">
                     <h3>Employer of Record</h3>
