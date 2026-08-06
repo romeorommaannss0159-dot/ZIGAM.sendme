@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZIGAM | Recruitment & Staffing Solutions</title>
@@ -40,7 +41,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 80px 20px;
+            padding: 80px 20px 40px;
             max-width: 900px;
             margin: 0 auto;
         }
@@ -66,11 +67,41 @@
             font-weight: 600;
             font-size: 1rem;
             display: inline-block;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn-sm {
+            padding: 10px 20px;
+            font-size: 0.9rem;
         }
 
         .cta-btn:hover {
             background-color: #e5b838;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Image Container */
+        .hero-image-container {
+            width: 100%;
+            max-width: 850px;
+            height: 320px;
+            margin-top: 45px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px dashed #f3c649;
+            background-color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f3c649;
+            font-weight: 600;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .services {
@@ -87,34 +118,90 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
         }
 
         .card {
             background-color: #0d0d0d;
-            padding: 30px;
             border-radius: 8px;
             border: 1px solid #222222;
+            overflow: hidden;
+            transition: border-color 0.3s ease, transform 0.3s ease;
         }
 
-        .card h3 {
-            margin-bottom: 15px;
+        .card:hover {
+            border-color: #f3c649;
+            transform: translateY(-4px);
+        }
+
+        /* Service Card Image Container */
+        .card-img {
+            width: 100%;
+            height: 180px;
+            background-color: #1c1c1c;
+            border-bottom: 2px dashed #f3c649;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f3c649;
+            font-size: 0.9rem;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 24px;
+        }
+
+        .card-content h3 {
+            margin-bottom: 12px;
             color: #ffffff;
         }
 
-        .card p {
+        .card-content p {
             color: #a1a1aa;
             font-size: 0.95rem;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 30px 20px;
             background-color: #0d0d0d;
             border-top: 1px solid #222222;
-            color: #666666;
+            color: #888888;
             font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 6px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 15px 5%;
+            }
+
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+
+            .hero {
+                padding: 50px 15px 30px;
+            }
+            
+            .hero-image-container {
+                height: 200px;
+            }
+
+            .card-img {
+                height: 150px;
+            }
         }
     </style>
 </head>
@@ -122,37 +209,69 @@
 
     <header>
         <div class="logo">ZIGAM</div>
-        <a href="https://api.whatsapp.com/send?phone=2348128882746&text=Hello,%20I%20would%20like%20to%20get%20started%20with%20ZIGAM." class="cta-btn" style="padding: 10px 20px;">Get Started</a>
+        <a href="https://wa.me/2348128882746?text=Hello,%20I%20would%20like%20to%20get%20started%20with%20ZIGAM." class="cta-btn cta-btn-sm" target="_blank">Get Started</a>
     </header>
 
     <section class="hero">
         <h1>Seamless Employer of Record & Talent Solutions in Nigeria</h1>
         <p>ZIGAM bridges the gap between top talent and companies worldwide. We handle payroll, legal compliance, tax remittances, and recruitment so you can focus on scaling your business.</p>
-        <a href="https://api.whatsapp.com/send?phone=2348128882746&text=Hello,%20I%20would%20like%20to%20schedule%20a%20consultation%20with%20ZIGAM." class="cta-btn">Schedule a Consultation</a>
+        <a href="https://wa.me/2348128882746?text=Hello,%20I%20would%20like%20to%20schedule%20a%20consultation%20with%20ZIGAM." class="cta-btn" target="_blank">Schedule a Consultation</a>
+
+        <!-- HERO IMAGE BOX -->
+        <div class="hero-image-container">
+            <img src="hero-image.jpg" alt="Hero Banner" onerror="this.style.display='none'">
+            <span>[ Main Hero Image Box ]</span>
+        </div>
     </section>
 
     <section class="services">
         <h2>Our Services</h2>
         <div class="grid">
+            
             <div class="card">
-                <h3>Talent Sourcing</h3>
-                <p>We find qualified professionals tailored directly to your business requirements.</p>
+                <!-- CARD IMAGE BOX 1 -->
+                <div class="card-img">
+                    <img src="talent-sourcing.jpg" alt="Talent Sourcing" onerror="this.style.display='none'">
+                    <span>[ Talent Sourcing Photo ]</span>
+                </div>
+                <div class="card-content">
+                    <h3>Talent Sourcing</h3>
+                    <p>We find qualified professionals tailored directly to your business requirements.</p>
+                </div>
             </div>
+
             <div class="card">
-                <h3>Staffing Solutions</h3>
-                <p>Flexible short-term and permanent recruitment for various industries.</p>
+                <!-- CARD IMAGE BOX 2 -->
+                <div class="card-img">
+                    <img src="staffing.jpg" alt="Staffing Solutions" onerror="this.style.display='none'">
+                    <span>[ Staffing Photo ]</span>
+                </div>
+                <div class="card-content">
+                    <h3>Staffing Solutions</h3>
+                    <p>Flexible short-term and permanent recruitment for various industries.</p>
+                </div>
             </div>
+
             <div class="card">
-                <h3>Employer of Record</h3>
-                <p>Streamlined payroll, tax remittances, and legal compliance management for candidates.</p>
+                <!-- CARD IMAGE BOX 3 -->
+                <div class="card-img">
+                    <img src="eor.jpg" alt="Employer of Record" onerror="this.style.display='none'">
+                    <span>[ EOR Photo ]</span>
+                </div>
+                <div class="card-content">
+                    <h3>Employer of Record</h3>
+                    <p>Streamlined payroll, tax remittances, and legal compliance management for candidates.</p>
+                </div>
             </div>
+
         </div>
     </section>
 
     <footer>
+        <p>Number 10 Paned Road, Aba, Abia State, Nigeria</p>
         <p>&copy; 2026 ZIGAM. All rights reserved.</p>
     </footer>
 
 </body>
-  </html>
-  
+                </html>
+                
