@@ -40,7 +40,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 80px 20px;
+            padding: 80px 20px 40px;
             max-width: 900px;
             margin: 0 auto;
         }
@@ -66,11 +66,34 @@
             font-weight: 600;
             font-size: 1rem;
             display: inline-block;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn-sm {
+            padding: 10px 20px;
+            font-size: 0.9rem;
         }
 
         .cta-btn:hover {
             background-color: #e5b838;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Image Container */
+        .hero-image-container {
+            width: 100%;
+            max-width: 850px;
+            margin-top: 45px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #222222;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
         }
 
         .services {
@@ -87,34 +110,85 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
         }
 
         .card {
             background-color: #0d0d0d;
-            padding: 30px;
             border-radius: 8px;
             border: 1px solid #222222;
+            overflow: hidden;
+            transition: border-color 0.3s ease, transform 0.3s ease;
         }
 
-        .card h3 {
-            margin-bottom: 15px;
+        .card:hover {
+            border-color: #f3c649;
+            transform: translateY(-4px);
+        }
+
+        /* Service Card Image Container */
+        .card-img {
+            width: 100%;
+            height: 180px;
+            background-color: #1c1c1c;
+            overflow: hidden;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-img img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 24px;
+        }
+
+        .card-content h3 {
+            margin-bottom: 12px;
             color: #ffffff;
         }
 
-        .card p {
+        .card-content p {
             color: #a1a1aa;
             font-size: 0.95rem;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 30px 20px;
             background-color: #0d0d0d;
             border-top: 1px solid #222222;
-            color: #666666;
+            color: #888888;
             font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 6px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 15px 5%;
+            }
+
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+
+            .hero {
+                padding: 50px 15px 30px;
+            }
+            
+            .card-img {
+                height: 160px;
+            }
         }
     </style>
 </head>
@@ -122,34 +196,62 @@
 
     <header>
         <div class="logo">ZIGAM</div>
-        <a href="https://wa.me/2348128882746?text=Hello,%20I%20would%20like%20to%20get%20started%20with%20ZIGAM." class="cta-btn" target="_blank" style="padding: 10px 20px;">Get Started</a>
+        <a href="https://wa.me/2348128882746?text=Hello,%20I%20would%20like%20to%20get%20started%20with%20ZIGAM." class="cta-btn cta-btn-sm" target="_blank">Get Started</a>
     </header>
 
     <section class="hero">
         <h1>Seamless Employer of Record & Talent Solutions in Nigeria</h1>
         <p>ZIGAM bridges the gap between top talent and companies worldwide. We handle payroll, legal compliance, tax remittances, and recruitment so you can focus on scaling your business.</p>
         <a href="https://wa.me/2348128882746?text=Hello,%20I%20would%20like%20to%20schedule%20a%20consultation%20with%20ZIGAM." class="cta-btn" target="_blank">Schedule a Consultation</a>
+
+        <!-- HERO IMAGE SLOT -->
+        <div class="hero-image-container">
+            <img src="https://via.placeholder.com/1200x600/1e1e1e/f3c649?text=Hero+Banner+Image+(e.g.,+Professional+Team+or+Office)" alt="ZIGAM Professional Staffing Solutions">
+        </div>
     </section>
 
     <section class="services">
         <h2>Our Services</h2>
         <div class="grid">
+            
             <div class="card">
-                <h3>Talent Sourcing</h3>
-                <p>We find qualified professionals tailored directly to your business requirements.</p>
+                <!-- CARD IMAGE SLOT 1 -->
+                <div class="card-img">
+                    <img src="https://via.placeholder.com/600x400/1e1e1e/f3c649?text=Talent+Sourcing" alt="Talent Sourcing">
+                </div>
+                <div class="card-content">
+                    <h3>Talent Sourcing</h3>
+                    <p>We find qualified professionals tailored directly to your business requirements.</p>
+                </div>
             </div>
+
             <div class="card">
-                <h3>Staffing Solutions</h3>
-                <p>Flexible short-term and permanent recruitment for various industries.</p>
+                <!-- CARD IMAGE SLOT 2 -->
+                <div class="card-img">
+                    <img src="https://via.placeholder.com/600x400/1e1e1e/f3c649?text=Staffing+Solutions" alt="Staffing Solutions">
+                </div>
+                <div class="card-content">
+                    <h3>Staffing Solutions</h3>
+                    <p>Flexible short-term and permanent recruitment for various industries.</p>
+                </div>
             </div>
+
             <div class="card">
-                <h3>Employer of Record</h3>
-                <p>Streamlined payroll, tax remittances, and legal compliance management for candidates.</p>
+                <!-- CARD IMAGE SLOT 3 -->
+                <div class="card-img">
+                    <img src="https://via.placeholder.com/600x400/1e1e1e/f3c649?text=Employer+of+Record" alt="Employer of Record">
+                </div>
+                <div class="card-content">
+                    <h3>Employer of Record</h3>
+                    <p>Streamlined payroll, tax remittances, and legal compliance management for candidates.</p>
+                </div>
             </div>
+
         </div>
     </section>
 
     <footer>
+        <p>Number 10 Paned Road, Aba, Abia State, Nigeria</p>
         <p>&copy; 2026 ZIGAM. All rights reserved.</p>
     </footer>
 
