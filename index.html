@@ -81,7 +81,7 @@
             transform: translateY(-2px);
         }
 
-        /* Application Upload Box */
+        /* Upload Section Styling */
         .upload-section {
             padding: 60px 8%;
             background-color: #0d0d0d;
@@ -147,6 +147,13 @@
             background-color: #0d0d0d;
             color: #ffffff;
             font-size: 1rem;
+        }
+
+        .file-status {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #4ade80;
+            font-weight: 600;
         }
 
         .services {
@@ -234,7 +241,7 @@
     <!-- APPLICANT FILE UPLOAD SECTION -->
     <section class="upload-section" id="apply">
         <h2>Submit Your Application</h2>
-        <p>Upload your application letter or CV below to apply for open roles.</p>
+        <p>Upload your application letter or document below.</p>
         
         <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data" style="max-width: 600px; margin: 0 auto;">
             <div class="form-group">
@@ -247,12 +254,14 @@
                 <input type="email" id="email" name="email" required placeholder="Enter your email address">
             </div>
 
+            <!-- Clickable Box triggers hidden file input -->
             <div class="upload-container" onclick="document.getElementById('file-upload').click();">
-                <label for="file-upload" class="upload-label">
-                    <span>📁 Tap here to select Application Letter / Document</span>
-                    <span style="font-size: 0.8rem; color: #a1a1aa; margin-top: 8px;">(Supports Images, PDF, DOCX)</span>
+                <label class="upload-label">
+                    <span>📁 Tap here to select Application Letter</span>
+                    <span style="font-size: 0.8rem; color: #a1a1aa; margin-top: 8px;">(Images, PDF, Word Document)</span>
+                    <span id="file-name" class="file-status"></span>
                 </label>
-                <input id="file-upload" class="file-input" type="file" name="attachment" accept="image/*,.pdf,.doc,.docx" required>
+                <input id="file-upload" class="file-input" type="file" name="attachment" accept="image/*,.pdf,.doc,.docx" required onchange="showFileName(this)">
             </div>
 
             <button type="submit" class="cta-btn" style="margin-top: 25px; width: 100%;">Submit Application</button>
@@ -281,6 +290,15 @@
         <p>Number 10 Paned Road, Aba, Abia State, Nigeria</p>
         <p>&copy; 2026 ZIGAM. All rights reserved.</p>
     </footer>
+
+    <script>
+        function showFileName(input) {
+            const fileNameDisplay = document.getElementById('file-name');
+            if (input.files && input.files[0]) {
+                fileNameDisplay.textContent = 'Selected File: ' + input.files[0].name;
+            }
+        }
+    </script>
 
 </body>
 </html>
