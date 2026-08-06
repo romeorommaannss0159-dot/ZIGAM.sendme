@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZIGAM | Recruitment & Staffing Solutions</title>
@@ -68,6 +67,8 @@
             font-size: 1rem;
             display: inline-block;
             transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
 
         .cta-btn-sm {
@@ -80,28 +81,72 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Image Container */
-        .hero-image-container {
-            width: 100%;
-            max-width: 850px;
-            height: 320px;
-            margin-top: 45px;
-            border-radius: 12px;
-            overflow: hidden;
+        /* Application Upload Box */
+        .upload-section {
+            padding: 60px 8%;
+            background-color: #0d0d0d;
+            text-align: center;
+        }
+
+        .upload-section h2 {
+            color: #f3c649;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .upload-section p {
+            color: #a1a1aa;
+            margin-bottom: 30px;
+        }
+
+        .upload-container {
+            max-width: 600px;
+            margin: 0 auto;
             border: 2px dashed #f3c649;
+            border-radius: 12px;
+            padding: 40px 20px;
+            background-color: #141414;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .upload-container:hover {
             background-color: #1a1a1a;
+        }
+
+        .upload-label {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
+            cursor: pointer;
             color: #f3c649;
             font-weight: 600;
         }
 
-        .hero-image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .file-input {
+            display: none;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
             display: block;
+            color: #ffffff;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #222222;
+            background-color: #0d0d0d;
+            color: #ffffff;
+            font-size: 1rem;
         }
 
         .services {
@@ -126,7 +171,7 @@
             background-color: #0d0d0d;
             border-radius: 8px;
             border: 1px solid #222222;
-            overflow: hidden;
+            padding: 30px;
             transition: border-color 0.3s ease, transform 0.3s ease;
         }
 
@@ -135,36 +180,12 @@
             transform: translateY(-4px);
         }
 
-        /* Service Card Image Container */
-        .card-img {
-            width: 100%;
-            height: 180px;
-            background-color: #1c1c1c;
-            border-bottom: 2px dashed #f3c649;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #f3c649;
-            font-size: 0.9rem;
-        }
-
-        .card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .card-content {
-            padding: 24px;
-        }
-
-        .card-content h3 {
+        .card h3 {
             margin-bottom: 12px;
             color: #ffffff;
         }
 
-        .card-content p {
+        .card p {
             color: #a1a1aa;
             font-size: 0.95rem;
         }
@@ -194,14 +215,6 @@
             .hero {
                 padding: 50px 15px 30px;
             }
-            
-            .hero-image-container {
-                height: 200px;
-            }
-
-            .card-img {
-                height: 150px;
-            }
         }
     </style>
 </head>
@@ -215,55 +228,52 @@
     <section class="hero">
         <h1>Seamless Employer of Record & Talent Solutions in Nigeria</h1>
         <p>ZIGAM bridges the gap between top talent and companies worldwide. We handle payroll, legal compliance, tax remittances, and recruitment so you can focus on scaling your business.</p>
-        <a href="https://wa.me/2348128882746?text=Hello,%20I%20would%20like%20to%20schedule%20a%20consultation%20with%20ZIGAM." class="cta-btn" target="_blank">Schedule a Consultation</a>
+        <a href="#apply" class="cta-btn">Submit Application</a>
+    </section>
 
-        <!-- HERO IMAGE BOX -->
-        <div class="hero-image-container">
-            <img src="hero-image.jpg" alt="Hero Banner" onerror="this.style.display='none'">
-            <span>[ Main Hero Image Box ]</span>
-        </div>
+    <!-- APPLICANT FILE UPLOAD SECTION -->
+    <section class="upload-section" id="apply">
+        <h2>Submit Your Application</h2>
+        <p>Upload your application letter or CV below to apply for open roles.</p>
+        
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data" style="max-width: 600px; margin: 0 auto;">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email address">
+            </div>
+
+            <div class="upload-container" onclick="document.getElementById('file-upload').click();">
+                <label for="file-upload" class="upload-label">
+                    <span>📁 Tap here to select Application Letter / Document</span>
+                    <span style="font-size: 0.8rem; color: #a1a1aa; margin-top: 8px;">(Supports Images, PDF, DOCX)</span>
+                </label>
+                <input id="file-upload" class="file-input" type="file" name="attachment" accept="image/*,.pdf,.doc,.docx" required>
+            </div>
+
+            <button type="submit" class="cta-btn" style="margin-top: 25px; width: 100%;">Submit Application</button>
+        </form>
     </section>
 
     <section class="services">
         <h2>Our Services</h2>
         <div class="grid">
-            
             <div class="card">
-                <!-- CARD IMAGE BOX 1 -->
-                <div class="card-img">
-                    <img src="talent-sourcing.jpg" alt="Talent Sourcing" onerror="this.style.display='none'">
-                    <span>[ Talent Sourcing Photo ]</span>
-                </div>
-                <div class="card-content">
-                    <h3>Talent Sourcing</h3>
-                    <p>We find qualified professionals tailored directly to your business requirements.</p>
-                </div>
+                <h3>Talent Sourcing</h3>
+                <p>We find qualified professionals tailored directly to your business requirements.</p>
             </div>
-
             <div class="card">
-                <!-- CARD IMAGE BOX 2 -->
-                <div class="card-img">
-                    <img src="staffing.jpg" alt="Staffing Solutions" onerror="this.style.display='none'">
-                    <span>[ Staffing Photo ]</span>
-                </div>
-                <div class="card-content">
-                    <h3>Staffing Solutions</h3>
-                    <p>Flexible short-term and permanent recruitment for various industries.</p>
-                </div>
+                <h3>Staffing Solutions</h3>
+                <p>Flexible short-term and permanent recruitment for various industries.</p>
             </div>
-
             <div class="card">
-                <!-- CARD IMAGE BOX 3 -->
-                <div class="card-img">
-                    <img src="eor.jpg" alt="Employer of Record" onerror="this.style.display='none'">
-                    <span>[ EOR Photo ]</span>
-                </div>
-                <div class="card-content">
-                    <h3>Employer of Record</h3>
-                    <p>Streamlined payroll, tax remittances, and legal compliance management for candidates.</p>
-                </div>
+                <h3>Employer of Record</h3>
+                <p>Streamlined payroll, tax remittances, and legal compliance management for candidates.</p>
             </div>
-
         </div>
     </section>
 
@@ -273,5 +283,4 @@
     </footer>
 
 </body>
-                </html>
-                
+</html>
